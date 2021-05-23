@@ -37,6 +37,27 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	//追加
+	classpath "com.diffplug.spotless:spotless-plugin-gradle:3.10.0"
+}
+
+apply plugin: "com.diffplug.gradle.spotless"
+
+spotless {
+
+  java {
+    eclipse().configFile project.file("eclipse-format-setting.xml")
+    // googleJavaFormat() # Google Java Formatでチェックもできる
+    trimTrailingWhitespace()
+    endWithNewline()
+    removeUnusedImports()
+  }
+
+  format 'misc', {
+    target '*.gradle'
+
+    indentWithSpaces(2)
+    endWithNewline()
+  }
 }
 
 test {

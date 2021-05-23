@@ -90,6 +90,12 @@ public class UserController {
 		return "login";
 	}
 	
+	@GetMapping("/logout")
+	public String logout(Model model) {
+		session.invalidate();
+		return "login";
+	}
+	
 	@GetMapping("/samplelogin")
 	public String sampleLogin(Model model) {
 
@@ -161,6 +167,12 @@ public class UserController {
 		if(Objects.isNull(userNo)) {
 			return "login";
 		}
+		
+		if (userNo.equals(11)) {
+			session.invalidate();
+			return "login";
+		}
+		
 		User user =  new User(userNo);
 		int result = userService.deleteUser(user);
 		return "login";

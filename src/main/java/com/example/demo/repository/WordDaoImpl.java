@@ -39,7 +39,6 @@ public class WordDaoImpl implements WordDao {
 			Word word = new Word((int)result.get("wordId"), (String)result.get("english"), 
 					(String)result.get("japanese"), (String)result.get("date"), (boolean)result.get("bool_known"));
 			wordList.add(word);
-			System.out.println(word);
 		}
 		return wordList;
 	}
@@ -53,7 +52,6 @@ public class WordDaoImpl implements WordDao {
 			Word word = new Word((int)result.get("wordId"), (String)result.get("english"), 
 					(String)result.get("japanese"), (String)result.get("date"), (boolean)result.get("bool_known"));
 			wordList.add(word);
-			System.out.println(word);
 		}
 		return wordList;
 	}

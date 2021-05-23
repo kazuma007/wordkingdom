@@ -77,12 +77,6 @@ public class WordController {
 	AddNewWord setupForm() {
 	    return new AddNewWord();
 	}
-	
-	@GetMapping("/logout")
-	public String logout(Model model) {
-		session.invalidate();
-		return "login";
-	}
 
 	@GetMapping
 	public String index(Model model) {
