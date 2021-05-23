@@ -88,7 +88,24 @@ public class UserController {
 		
 		model.addAttribute("msg_login_error", "ユーザーIDまたはパスワードが異なります。");
 		return "login";
+	}
+	
+	@GetMapping("/samplelogin")
+	public String sampleLogin(Model model) {
+
+		User user = new User("HelloWorld57", "");
 		
+		User registeredUser;
+		try {
+			registeredUser = userService.selectUser(user);
+		} catch (EmptyResultDataAccessException e) {
+			// 取得できない場合EmptyResultDataAccessExceptionがthrowされる
+			model.addAttribute("msg_login_error", "ユーザーIDまたはパスワードが異なります。");
+			return "login";
+		}
+			
+		session.setAttribute("userNo", registeredUser.getUserNo()); 
+		return "index";
 	}
 	
 	@GetMapping("/userInfoPage")

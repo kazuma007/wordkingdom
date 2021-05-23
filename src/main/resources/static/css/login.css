@@ -163,6 +163,17 @@
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
+.sample__area {
+	margin: 3rem;
+}
+
+.sample__area--button {
+	background: black;
+    padding: 1rem;
+    color: white;
+}
+
+
 .msg_login_error {
     padding-top: 25px;
     text-align: center;
