@@ -1,0 +1,253 @@
+* {
+    margin:0; padding:0;
+}
+
+html{
+    width: 100%;
+}
+body{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    width: 100%;
+}
+header {
+    height: 100px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #000000;
+    color: white;
+}
+header a {
+	text-decoration: none;
+	color: white;
+}
+header .headline{
+    line-height: 100px;
+    float: left;
+    font-size: 30px;
+    margin-left: 100px;
+}
+.nav-list {
+    line-height: 100px;
+    float: right;
+    margin-right: 100px;
+    list-style: none;
+}
+.nav-list-item {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.main{
+    flex: 1;
+}
+
+.msg_finish {
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+footer {
+    background: black;
+    text-align: center;
+    height: 100px;
+}
+
+footer p {
+    line-height: 100px;
+    color: white;
+    font-size: 12px;
+}
+
+.english,
+.japanese {
+    width: 30%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 30px;
+    display: block;
+    text-align: center;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.add_new_word {
+    padding-top: 125px;
+}
+
+.english:focus, .japanese:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: black;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 13px;
+    /* width: 60px; */
+    text-align: center;
+    display: block;
+    margin-left : auto;
+    margin-right : auto;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 500px) {
+    .main {
+        border-radius: 0px;
+    }
+    .english,
+    .japanese {
+        width: 70%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 30px;
+        display: block;
+        text-align: center;
+        margin-left : auto;
+        margin-right : auto;
+    }
+    
+    .add_new_word {
+    padding-top: 85px;
+}
+    
+}
+
+.word {
+    text-align: center;
+    padding-top: 125px;
+}
+
+.word_to_answer_deco {
+    font-size: 50px;
+    font-weight: bold;
+    background:linear-gradient(transparent 70%, #FFFF00 0%);
+}
+
+.word_to_answer {
+    padding-bottom: 30px;
+    width:90%;
+    margin: auto;
+    font-size:23px;
+}
+
+.study_word {
+}
+
+.word_detail {
+    /* padding-top: 25px; */
+}
+
+.word p {
+    padding-bottom: 25px;
+}
+
+.word .true_of_false {
+    padding-top: 25px;
+}
+
+.true_of_false {
+    color: #FFCC33;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.false {
+    color: #006633;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.def_area {
+    width: 80%;
+    text-align: left;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.def_table {
+    text-align: left;
+    margin-left : 20%;
+    margin-right : 20%;
+    padding-bottom: 30px;
+}
+
+.btn_to_next{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff !important;
+    background: black;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 13px;
+    width: 120px;
+    text-align: center;
+    display: block;
+    margin-left : auto;
+    margin-right : auto;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+}
+
+.spaceDiv {
+    height: 50px;
+}
+
+.msg_add_new_word{
+	padding-top: 25px;
+	text-align: center;
+}
+
+.errorMsg {
+	padding-top: 15px;
+	text-align: center;
+	color: #FFCC33;
+}
+
+.word_detail_syns {
+    text-align: center;
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+}
+
+.false_ans {
+    font-size: 18px;
+}
+
+.spaceDivBefSyns {
+    height: 25px;
+}

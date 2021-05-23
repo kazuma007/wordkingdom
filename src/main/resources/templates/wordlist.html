@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word-Kingdom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel="stylesheet">
+  <link rel="stylesheet" href="/css/wordlist.css" th:href="@{/css/wordlist.css}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black;">
+      <a class="navbar-brand" th:href="@{/addition}"><img src="img/Word-Kingdom-logo-white.png" th:src="@{/img/Word-Kingdom-logo-white.png}"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-list-item">
+            <a th:href="@{/addition}" style="color: white;">Add</a>
+          </li>
+          <li class="nav-list-item">
+              <a th:href="@{/learning}" style="color: white;">Learning</a>
+          </li>
+          <li class="nav-list-item">
+              <a th:href="@{/wordlist}" style="color: white;">Word List</a>
+          </li>
+          <li class="nav-list-item">
+              <a th:href="@{/userInfoPage}" style="color: white;">User Info</a>
+          </li>
+          <li class="nav-list-item">
+              <a th:href="@{/logout}" style="color: white;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="spaceDivBefTable"></div>
+    <div class="main">
+	    <div class="known_or_not">
+	    	<a href="#" th:href="@{/knownWordlist}" class="btn-square" th:if="${isKnownList} == false">To the Learned List</a>
+	    	<a href="#" th:href="@{/wordlist}" class="btn-square" th:if="${isKnownList} == true">To the Leaning List</a>
+	    </div>
+    	<div class="word-table" th:if="${#lists.size(wordList) == 0}">
+    		<p class="word_to_answer">No words to show...</p>
+    	</div>
+    	<div class="word-table" th:if="${#lists.size(wordList) != 0}">
+	        <table>
+		        <thead>
+		            <tr>
+		                <th>No</th>
+		                <td>Eng</td>
+		                <td>Jpn</td>
+		                <td></td>
+		            </tr>
+				</thead>
+				<tbody th:remove="all-but-first" th:each="word, status : ${wordList}">
+		            <tr>
+		                <th th:text="${status.index + 1}">1</th>
+		                <td th:text="${word.english}">Hello</td>
+		                <td th:text="${word.japanese}">こんにちは</td>
+		                <td th:if="${word.bool_known} == false"><a href="#" th:href="@{/knowThisWord(wordId=*{word.wordId})}"><button class="submit">Learned!</button></a></td>
+		                <td th:if="${word.bool_known} == true"><a href="#" th:href="@{/forgetThisWord(wordId=*{word.wordId})}"><button class="submit">Forgot...</button></a></td>
+		            </tr>
+		            <tr>
+		                <th>2</th>
+		                <td>Hi</td>
+		                <td>こんにちは</td>
+		                <td><button class="submit">delete</button></td>
+		            </tr>
+		            <tr class="last">
+		                <th>3</th>
+		                <td>Yo</td>
+		                <td>こんにちは</td>
+		                <td><button class="submit">delete</button></td>
+		            </tr>
+				</tbody>
+	        </table>
+        </div>
+        <div class="spaceDivBefTable"></div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <p>© 2020 Kazuma</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

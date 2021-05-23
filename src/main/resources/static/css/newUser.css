@@ -1,0 +1,176 @@
+.userId,
+.password,
+.createdDate,
+.currentPassword,
+.newPassword,
+.newPasswordComfirm,
+.password-to-comfirm {
+    width: 30%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 30px;
+    display: block;
+    text-align: center;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.userIdLabel {
+    width: 30%;
+    display: block;
+    text-align: center;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.passwordLabel {
+    width: 30%;
+    display: block;
+    text-align: center;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.register_form {
+    padding-top: 125px;
+}
+
+.userId:focus,
+.password:focus,
+.password-to-comfirm:focus,
+.currentPassword:focus,
+.newPassword:focus,
+.newPasswordComfirm:focus,
+.createdDate:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.register {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: black;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin-left : auto;
+    margin-right : auto;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.msg_register_error {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.createdDateArea {
+    padding-top: 75px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.deleteAccountArea {
+    padding-top: 25px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.password_form {
+    padding-top: 20px;
+}
+
+.delete{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 6px 20px;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid #bbb;
+    overflow: visible;
+    font: bold 13px arial, helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white !important;
+    background-color: #fb5144;
+    background-image: linear-gradient(top, rgba(255,255,255,1),
+                                rgba(255,255,255,0)),
+                                url(data:image/png;base64,iVBORw0KGg[...]QmCC);
+    transition: background-color .2s ease-out;
+    background-clip: padding-box; /* Fix bleeding */
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .3),
+                            0 2px 2px -1px rgba(0, 0, 0, .5),
+                            0 1px 0 rgba(255, 255, 255, .3) inset;
+}
+ 
+.delete:hover{
+    background-color: #eee;
+    color: #555;
+}
+ 
+.delete:active{
+    background: #e9e9e9;
+    position: relative;
+    top: 1px;
+    text-shadow: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+    outline: none;
+}
+
+.delete.small{
+  padding: 4px 12px;
+}
+
+.delete.large{
+  padding: 12px 30px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 500px) {
+    .main {
+        border-radius: 0px;
+    }
+	.userId,
+	.password,
+	.createdDate,
+	.currentPassword,
+	.newPassword,
+	.newPasswordComfirm,
+	.password-to-comfirm {
+	    width: 70%;
+	    color: rgb(38, 50, 56);
+	    font-weight: 700;
+	    font-size: 14px;
+	    letter-spacing: 1px;
+	    background: rgba(136, 126, 126, 0.04);
+	    padding: 10px 20px;
+	    border: none;
+	    border-radius: 20px;
+	    outline: none;
+	    box-sizing: border-box;
+	    border: 2px solid rgba(0, 0, 0, 0.02);
+	    margin-bottom: 30px;
+	    display: block;
+	    text-align: center;
+	    margin-left : auto;
+	    margin-right : auto;
+	}
+	
+	.register_form {
+    padding-top: 90px;
+}
+}
